@@ -4,7 +4,7 @@ package com.know.rx.java;
  *
  * @author KnowGroup
  */
-public class Lesson_00_Functional_Reactive_Concepts {
+public class Lesson_00_Functional_Reactive_Concepts_PureAndImpure {
 
     /*
       Pure function always return the same result for a given set of Parameter
@@ -23,7 +23,7 @@ public class Lesson_00_Functional_Reactive_Concepts {
     }
     
     public static void main(String[] arg){
-        Lesson_00_Functional_Reactive_Concepts l = new Lesson_00_Functional_Reactive_Concepts();
+        Lesson_00_Functional_Reactive_Concepts_PureAndImpure l = new Lesson_00_Functional_Reactive_Concepts_PureAndImpure();
         
         for(int i = 1;i<10;i++){
             if(l.pure_function(5) != 25){
