@@ -1,6 +1,5 @@
 package com.know.rx.java;
 
-import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
