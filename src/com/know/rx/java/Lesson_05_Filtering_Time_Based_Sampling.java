@@ -36,11 +36,11 @@ public class Lesson_05_Filtering_Time_Based_Sampling {
 class TimeTicker{
     
     private final BehaviorSubject<Long> tickerSubject;
-    private final long interval;
+    protected final long interval;
     
-    private long lastTick;
-    private Thread tickerThread;
-    private volatile boolean paused;
+    protected long lastTick;
+    protected Thread tickerThread;
+    protected volatile boolean paused;
 
     public TimeTicker(long interval) {
         
@@ -54,9 +54,9 @@ class TimeTicker{
         return tickerSubject;
     }
     
-    public synchronized void start(){
+    public synchronized TimeTicker start(){
         if(tickerThread != null){
-            return;
+            return this;
         }
         
         tickerThread = new Thread(() ->{
@@ -82,6 +82,7 @@ class TimeTicker{
         tickerSubject.onComplete();
         },"TickerThread");
         tickerThread.start();
+        return this;
     }
     
     public void pause(){
